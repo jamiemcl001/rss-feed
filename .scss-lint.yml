@@ -1,0 +1,6 @@
+linters:
+  StringQuotes:
+    enabled: false
+  SelectorFormat:
+    enabled: true
+    convention: strict_BEM

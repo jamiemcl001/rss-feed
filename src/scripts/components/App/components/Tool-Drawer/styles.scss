@@ -1,0 +1,18 @@
+@import "~scss/global-vars";
+@import "~scss/mixins/size";
+@import "~scss/mixins/position";
+
+.tool-drawer {
+  @include size(25%, 100%);
+  background-color: $drawer-background;
+  box-sizing: border-box;
+  padding: 40px 15px;
+  position: relative;
+  text-align: center;
+}
+
+.tool-drawer__title {
+  color: $title-color;
+  font-size: 1.75rem;
+  font-weight: lighter;
+}
