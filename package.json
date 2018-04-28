@@ -1,0 +1,38 @@
+{
+  "name": "rss-feed",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamiemcl001/rss-feed.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamiemcl001/rss-feed/issues"
+  },
+  "homepage": "https://github.com/jamiemcl001/rss-feed#readme",
+  "devDependencies": {
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-config-google": "^0.9.1",
+    "html-loader": "^0.5.5",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+    "scss-lint": "0.0.0",
+    "vue-html-loader": "^1.2.4",
+    "vue-loader": "^15.0.4",
+    "vue-style-loader": "^4.1.0",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.6.0",
+    "webpack-cli": "^2.0.15"
+  },
+  "dependencies": {
+    "vue": "^2.5.16"
+  }
+}
