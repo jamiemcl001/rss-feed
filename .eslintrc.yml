@@ -2,8 +2,14 @@ extends: google
 rules:
   no-console: [0]
   comma-dangle: [0]
+  max-len: [0]
 env:
   browser: true
   es6: true
 parserOptions:
   sourceType: module
+  ecmaVersion: 6
+  ecmaFeatures:
+    jsx: true
+    spread: true
+    experimentalObjectRestSpread: true

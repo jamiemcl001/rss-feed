@@ -1,7 +1,23 @@
+$color-white: #ffffff;
+$color-offwhite: #ebeced;
+
+// *******************************
+// * TOOL_DRAWER VARIABLES
+// ******************************/
+
+// Generics
 $drawer-background: #56606b;
+$drawer-element-border-color: $color-offwhite;
+$title-light-text-color: $color-offwhite;
 
-$title-color: #ebeced;
+// Feed-Viewer Specifics
+$search-button-text-color: $color-offwhite;
+$search-button-active-text-color: $color-white;
 
+// Add-New-Feed Specifics
 $input-box-border-color: #757f88;
 $input-box-background-color: #454e57;
 $input-box-text-color: #9da6af;
+
+$button-light-bg-color: #49aceb;
+$button-light-text-color: $color-offwhite;

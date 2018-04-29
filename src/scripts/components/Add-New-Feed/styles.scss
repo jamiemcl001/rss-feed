@@ -1,0 +1,53 @@
+@import '~scss/mixins/position';
+@import '~scss/mixins/prefixed/placeholder';
+@import '~scss/global-vars';
+
+.add-new-feed {
+  box-sizing: border-box;
+  flex: 0;
+  padding: inherit;
+  padding-bottom: 0;
+  padding-top: 0;
+  width: 100%;
+
+  &__container {
+    border-top: 1px solid $drawer-element-border-color;
+    padding-top: 30px;
+  }
+
+  &__header {
+    color: $title-light-text-color;
+    margin-bottom: 12px;
+  }
+
+  &__input {
+    &--dark {
+      background-color: $input-box-background-color;
+      border: 2px solid $input-box-border-color;
+      color: $input-box-text-color;
+
+      @include placeholder() {
+        color: $input-box-text-color;
+        font-style: italic;
+      };
+
+      &:focus {
+        border: 2px solid $color-offwhite;
+        transition: border 500ms;
+      }
+    }
+  }
+
+  &__button {
+    &--blue {
+      background-color: $button-light-bg-color;
+      border: 2px solid $button-light-bg-color;
+      color: $button-light-text-color;
+
+      &:focus {
+        border: 2px solid $color-offwhite;
+        transition: border 500ms;
+      }
+    }
+  }
+}

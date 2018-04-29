@@ -6,22 +6,4 @@
 .app {
   @include size(100%, 100%);
   font-family: Lato, sans-serif;
-
-  .add-new-feed__input {
-    background-color: $input-box-background-color;
-    border: 2px solid $input-box-border-color;
-    border-radius: 15px;
-    box-sizing: border-box;
-    color: $input-box-text-color;
-    display: block;
-    font-size: .8rem;
-    font-style: italic;
-    padding: 5px;
-    width: 100%;
-
-    @include placeholder() {
-      color: $input-box-text-color;
-      font-style: italic;
-    };
-  }
 }

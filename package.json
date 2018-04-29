@@ -21,6 +21,7 @@
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "css-loader": "^0.28.11",
     "eslint": "^4.19.1",
@@ -31,6 +32,7 @@
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
     "scss-lint": "0.0.0",
+    "svg-url-loader": "^2.3.2",
     "vue-html-loader": "^1.2.4",
     "vue-loader": "^15.0.4",
     "vue-style-loader": "^4.1.0",

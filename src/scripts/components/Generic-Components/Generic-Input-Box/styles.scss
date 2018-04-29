@@ -1,0 +1,20 @@
+@import '~scss/mixins/prefixed/placeholder';
+
+.generic-input-box {
+  border-radius: 15px;
+  box-sizing: border-box;
+  display: block;
+  font-size: .8rem;
+  font-style: italic;
+  margin-bottom: 12px;
+  padding: 5px;
+  width: 100%;
+
+  @include placeholder() {
+    font-style: italic;
+  };
+
+  &:focus {
+    outline: none;
+  }
+}

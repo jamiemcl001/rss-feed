@@ -3,16 +3,19 @@
 @import "~scss/mixins/position";
 
 .tool-drawer {
-  @include size(25%, 100%);
+  @include size(295px, 100%);
   background-color: $drawer-background;
   box-sizing: border-box;
-  padding: 40px 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 18px;
   position: relative;
   text-align: center;
-}
 
-.tool-drawer__title {
-  color: $title-color;
-  font-size: 1.75rem;
-  font-weight: lighter;
+  &__title {
+    color: $title-light-text-color;
+    flex: 0;
+    font-size: 1.65rem;
+    font-weight: lighter;
+  }
 }

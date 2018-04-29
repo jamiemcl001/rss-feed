@@ -1,0 +1,13 @@
+<section class="feed-viewer">
+  <div class="feed-viewer__filter">
+    <input type="text" class="feed-viewer__input" placeholder="Filter your search..."></input>
+    <button class="feed-viewer__search-button fas fa-search"></button>
+  </div>
+  <div class="feed-viewer__list" style="display: block;">
+    <ul>
+      <li v-for="item in feeds">
+        <span>{{item}}</span>
+      </li>
+    </ul>
+  </div>
+</section>

@@ -1,4 +1,4 @@
-import ToolDrawer from './components/Tool-Drawer/';
+import ToolDrawer from '@components/Tool-Drawer/';
 
 export default {
     components: {

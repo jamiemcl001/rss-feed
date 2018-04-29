@@ -3,4 +3,9 @@ linters:
     enabled: false
   SelectorFormat:
     enabled: true
-    convention: strict_BEM
+    convention: hyphenated_BEM
+  NestingDepth:
+    enabled: true
+    ignore_parent_selectors: true
+  HexLength:
+    enabled: false

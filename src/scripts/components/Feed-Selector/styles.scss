@@ -1,0 +1,47 @@
+@import '~scss/mixins/prefixed/placeholder';
+@import '~scss/global-vars';
+
+.feed-viewer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-top: 30px;
+
+  &__input {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-right: 4%;
+    vertical-align: middle;
+    width: 80%;
+
+    &--dark {
+      background-color: $input-box-background-color;
+      border: 2px solid $input-box-border-color;
+      color: $input-box-text-color;
+
+      @include placeholder() {
+        color: $input-box-text-color;
+      }
+    }
+  }
+
+  &__search-button {
+    background: none;
+    border: 0;
+    color: $search-button-text-color;
+    display: inline-block;
+    font-size: 1.5rem;
+    transition: transform 200ms;
+    vertical-align: middle;
+    width: 12%;
+
+    &:active {
+      color: $color-white;
+      transform: scale(.9);
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
