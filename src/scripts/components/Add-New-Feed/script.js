@@ -13,6 +13,15 @@ export default {
         };
     },
     methods: {
+        onClick() {
+            if (!this.validate()) return;
+
+            this.$store.dispatch('feeds/add-feed', {
+                feedName: this.feedName || 'BBC Tech',
+                feedUrl: this.feedUrl || 'http://feeds.bbci.co.uk/news/technology/rss.xml?edition=uk'
+            });
+        },
+
         updateFeedName(newVal) {
             this.feedName = newVal;
         },
@@ -21,8 +30,8 @@ export default {
             this.feedUrl = newVal;
         },
 
-        addFeed() {
-
+        validate() {
+            return true;
         }
     }
 };

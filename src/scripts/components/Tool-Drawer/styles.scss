@@ -5,6 +5,7 @@
 .tool-drawer {
   @include size(295px, 100%);
   background-color: $drawer-background;
+  box-shadow: #d9dae0 2px 0 10px 0px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;

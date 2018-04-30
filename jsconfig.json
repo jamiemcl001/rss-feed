@@ -9,7 +9,9 @@
         "baseUrl": ".",
         "moduleResolution": "node",
         "paths": {
-            "@components/*": ["./src/components/*"]
+            "@components/*": ["./src/scripts/components/*"],
+            "@constants/*": ["./src/scripts/constants/*"],
+            "@store/*": ["./src/scripts/store/*"]
         },
         "allowSyntheticDefaultImports": true
     }

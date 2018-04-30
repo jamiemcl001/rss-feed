@@ -1,0 +1,45 @@
+@import '~scss/global-vars';
+@import '~scss/mixins/size';
+
+.feed-item {
+  margin-bottom: 7px;
+  transition: opacity 500ms;
+
+  &--is-inactive {
+    opacity: .4;
+  }
+
+  &__checkbox {
+    display: none;
+  }
+
+  &__label {
+    @include size(25px);
+    border: 3px solid $color-white;
+    border-radius: 25px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: middle;
+  }
+
+  &__feed-name {
+    color: $color-white;
+    display: inline-block;
+    text-align: left;
+    vertical-align: middle;
+    width: calc(100% - 90px);
+  }
+
+  &__delete-btn {
+    @include size(25px);
+    background-image: url(../../../assets/images/icons/delete.svg);
+    background-repeat: no-repeat;
+    color: $color-white;
+    display: inline-block;
+    font-size: 25px;
+    margin-left: 15px;
+    vertical-align: middle;
+  }
+}

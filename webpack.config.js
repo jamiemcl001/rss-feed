@@ -16,6 +16,8 @@ module.exports = [
             extensions: ['.js', '.vue', '.json'],
             alias: {
                 '@components': resolve(__dirname, 'src/scripts/components'),
+                '@constants': resolve(__dirname, 'src/scripts/constants'),
+                '@store': resolve(__dirname, 'src/scripts/store'),
                 'scss': resolve(__dirname, 'src/assets/scss')
             }
         },

@@ -9,3 +9,5 @@ linters:
     ignore_parent_selectors: true
   HexLength:
     enabled: false
+  UrlQuotes:
+    enabled: false

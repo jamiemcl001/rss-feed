@@ -1,7 +1,16 @@
+// import ResizeObserver from 'resize-observer-polyfill';
+
 export default {
     computed: {
-        feeds() {
-            return this.$store.state.feeds;
+        visibleArticles() {
+            return this.$store.state.feeds
+                .filter((feed) => feed.isActive)
+                .reduce((acc, val) => [...acc, ...val.feedContent], []);
         }
+    },
+    data() {
+        return {
+            numberOfColumns: 0
+        };
     }
 };
