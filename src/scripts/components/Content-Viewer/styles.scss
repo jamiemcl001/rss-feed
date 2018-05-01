@@ -3,5 +3,24 @@
 
 .content-viewer {
   flex: 1;
-  overflow-y: scroll;
+  padding: 20px;
+}
+
+.content-viewer__grid {
+  margin: 0 auto;
+}
+
+.content-viewer__column-sizer {
+  display: none;
+  width: 300px;
+}
+
+.content-viewer__gutter-selector {
+  display: none;
+  width: 20px;
+}
+
+.content-viewer__item {
+  margin-bottom: 10px;
+  width: 300px;
 }

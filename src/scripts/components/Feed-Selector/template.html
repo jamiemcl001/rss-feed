@@ -4,7 +4,8 @@
                        placeholderText="Filter your feeds..."
                        @valueChanged="updateSearchModel">
     </Generic-Input-Box>
-    <button class="feed-viewer__search-button" v-on:click="filterItems()"></button>
+    <button class="feed-viewer__search-button fas fa-search"
+            v-on:click="filterItems()"></button>
   </div>
   <div class="feed-viewer__list" style="display: block;">
     <Feed-Item v-for="item in feeds" :item="item"></Feed-Item>

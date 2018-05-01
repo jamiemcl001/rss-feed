@@ -1,3 +1,14 @@
 <section class="content-viewer">
-  <div v-for="article in visibleArticles">{{article.title}}</div>
+  <div class="content-viewer__grid" v-masonry transition-duration="0.3s"
+                                              item-selector=".content-viewer__item"
+                                              column-width=".content-viewer__column-sizer"
+                                              horizontal-order="true"
+                                              gutter=".content-viewer__gutter-selector"
+                                              fit-width="true">
+    <div class="content-viewer__column-sizer"></div>
+    <div class="content-viewer__gutter-selector"></div>
+    <div v-masonry-tile class="content-viewer__item" v-for="(article, index) in visibleArticles">
+      <Article-Card :article="article"></Article-Card>
+    </div>
+  </div>
 </section>

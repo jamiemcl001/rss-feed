@@ -3,5 +3,7 @@
   <label :for="'checkbox-' + item.id" class="feed-item__label" v-on:click="toggleFilterFocus()"></label>
   <span class="feed-item__feed-name">{{item.feedName}}</span>
   
-  <div class="feed-item__delete-btn" v-on:click="deleteFeed()"></div>
+  <div class="feed-item__delete-btn" v-on:click="deleteFeed()">
+    <i class="fas fa-times-circle"></i>
+  </div>
 </div>

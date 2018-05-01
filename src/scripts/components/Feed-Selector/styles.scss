@@ -26,9 +26,6 @@
   }
 
   &__search-button {
-    background-color: transparent;
-    background-image: url(../../../assets/images/icons/search.svg);
-    background-repeat: no-repeat;
     border: 0;
     color: $search-button-text-color;
     display: inline-block;
@@ -49,6 +46,8 @@
   }
 
   &__list {
+    font-size: .85rem;
+    line-height: 1rem;
     margin-bottom: 15px;
     margin-top: 15px;
   }

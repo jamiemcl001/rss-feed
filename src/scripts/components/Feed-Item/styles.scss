@@ -1,6 +1,8 @@
 @import '~scss/global-vars';
 @import '~scss/mixins/size';
 
+$hover-delete-btn-color: #fcf0f0;
+
 .feed-item {
   margin-bottom: 7px;
   transition: opacity 500ms;
@@ -14,9 +16,9 @@
   }
 
   &__label {
-    @include size(25px);
+    @include size(21px);
     border: 3px solid $color-white;
-    border-radius: 25px;
+    border-radius: 21px;
     box-sizing: border-box;
     cursor: pointer;
     display: inline-block;
@@ -33,13 +35,21 @@
   }
 
   &__delete-btn {
-    @include size(25px);
-    background-image: url(../../../assets/images/icons/delete.svg);
+    @include size(21px);
     background-repeat: no-repeat;
     color: $color-white;
     display: inline-block;
-    font-size: 25px;
+    font-size: 21px;
     margin-left: 15px;
+    transition: color 100ms, transform 100ms ease;
     vertical-align: middle;
+
+    &:active {
+      transform: scale(.85);
+    }
+
+    &:hover {
+      color: $hover-delete-btn-color;
+    }
   }
 }

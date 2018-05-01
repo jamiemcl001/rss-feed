@@ -5,10 +5,11 @@
 .tool-drawer {
   @include size(295px, 100%);
   background-color: $drawer-background;
-  box-shadow: #d9dae0 2px 0 10px 0px;
+  box-shadow: $drawer-shadow-color 2px 0 10px 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
   padding: 40px 18px;
   position: relative;
   text-align: center;

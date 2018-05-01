@@ -48,6 +48,7 @@
     "resize-observer-polyfill": "^1.5.0",
     "string-format": "^1.0.0",
     "vue": "^2.5.16",
+    "vue-masonry": "^0.11.1",
     "vuex": "^3.0.1"
   }
 }

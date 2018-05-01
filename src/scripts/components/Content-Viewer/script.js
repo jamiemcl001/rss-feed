@@ -1,6 +1,9 @@
-// import ResizeObserver from 'resize-observer-polyfill';
+import ArticleCard from '@components/Article-Card/index.vue';
 
 export default {
+    components: {
+        'Article-Card': ArticleCard
+    },
     computed: {
         visibleArticles() {
             return this.$store.state.feeds
