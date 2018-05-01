@@ -26,11 +26,11 @@
   }
 
   &__search-button {
+    background: transparent;
     border: 0;
     color: $search-button-text-color;
     display: inline-block;
     font-size: 1.5rem;
-    padding-top: 10%;
     transition: transform 200ms;
     vertical-align: middle;
     width: 10%;
