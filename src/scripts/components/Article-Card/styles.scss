@@ -3,55 +3,55 @@
 .article-card {
   margin: 0 auto;
   width: 95%;
-}
 
-.article-card__header-row {
-  background-color: $article-title-background;
-  font-size: .8rem;
-  height: 2rem;
-  line-height: 2rem;
-  padding: .5rem;
-}
-
-.article-card__external-icon {
-  color: $color-offwhite;
-  cursor: pointer;
-  margin-right: 5px;
-}
-
-.article-card__link {
-  color: $article-link-color;
-  cursor: pointer;
-
-  &:hover {
-    text-decoration: underline;
+  &__header-row {
+    background-color: $article-title-background;
+    font-size: .8rem;
+    height: 2rem;
+    line-height: 2rem;
+    padding: .5rem;
   }
-}
 
-.article-card__date {
-  color: $color-offwhite;
-  float: right;
-  font-size: .6rem;
-  margin-right: 5px;
-}
+  &__external-icon {
+    color: $color-offwhite;
+    cursor: pointer;
+    margin-right: 5px;
+  }
 
-.article-card__thumbnail {
-  width: 100%;
-}
+  &__link {
+    color: $article-link-color;
+    cursor: pointer;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 
-.article-card__body {
-  background-color: $color-white;
-  padding: 1rem;
-}
+  &__date {
+    color: $color-offwhite;
+    float: right;
+    font-size: .6rem;
+    margin-right: 5px;
+  }
 
-.article-card__title {
-  color: $article-title-color;
-  font-size: 1.2rem;
-  font-weight: 400;
-  margin-bottom: 1rem;
-}
+  &__thumbnail {
+    width: 100%;
+  }
 
-.article-card__description {
-  color: $color-black;
-  font-weight: 700;
+  &__body {
+    background-color: $color-white;
+    padding: 1rem;
+  }
+
+  &__title {
+    color: $article-title-color;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  &__description {
+    color: $color-black;
+    font-weight: 700;
+  }
 }
