@@ -1,6 +1,15 @@
 <div class="article-card">
   <div class="article-card__header-row">
-    
+    <i class="article-card__external-icon fas fa-external-link-alt" @click="launchArticleInNewWindow()"></i>
+    <span class="article-card__link" @click="launchArticleInNewWindow()">{{article.feedName}}</span>
+    <span class="article-card__date">{{article.pubDate | dateFormat }}</span>
   </div>
-  <span>{{article.title}}</span>
+
+  <img v-if="article.thumbnail !== ''" :src="article.thumbnail" class="article-card__thumbnail">
+
+  <div class="article-card__body">
+    <h1 class="article-card__title">{{article.title}}</h1>
+    <p class="article-card__description">{{article.description | stripTags | truncate(200) }}</p>
+  </div>
+
 </div>

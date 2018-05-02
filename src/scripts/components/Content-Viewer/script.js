@@ -1,3 +1,4 @@
+import orderby from 'orderby';
 import ArticleCard from '@components/Article-Card/index.vue';
 
 export default {
@@ -5,6 +6,9 @@ export default {
         'Article-Card': ArticleCard
     },
     computed: {
+        orderedArticles() {
+            return orderby(this.visibleArticles, 'pubDateMilliseconds');
+        },
         visibleArticles() {
             return this.$store.state.feeds
                 .filter((feed) => feed.isActive)

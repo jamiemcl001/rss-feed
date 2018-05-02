@@ -1,4 +1,4 @@
-import {orderBy} from 'lodash';
+import orderby from 'orderby';
 import FeedItem from '@components/Feed-Item/index.vue';
 import GenericButton from '@components/Generic-Components/Generic-Button/index.vue';
 import GenericInputBox from '@components/Generic-Components/Generic-Input-Box/index.vue';
@@ -11,7 +11,7 @@ export default {
     },
     computed: {
         feeds() {
-            return orderBy(
+            return orderby(
                 this.$store.state.feeds
                     .filter((item) => new RegExp(this.appliedSearchFilter, 'gi').test(item.feedName)),
                 'feedName'

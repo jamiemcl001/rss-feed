@@ -3,11 +3,10 @@
                                               item-selector=".content-viewer__item"
                                               column-width=".content-viewer__column-sizer"
                                               horizontal-order="true"
-                                              gutter=".content-viewer__gutter-selector"
-                                              fit-width="true">
+                                              gutter=".content-viewer__gutter-selector">
     <div class="content-viewer__column-sizer"></div>
     <div class="content-viewer__gutter-selector"></div>
-    <div v-masonry-tile class="content-viewer__item" v-for="(article, index) in visibleArticles">
+    <div v-masonry-tile class="content-viewer__item" v-for="(article, index) in orderedArticles">
       <Article-Card :article="article"></Article-Card>
     </div>
   </div>
