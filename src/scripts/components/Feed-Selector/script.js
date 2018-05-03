@@ -1,4 +1,4 @@
-import orderby from 'orderby';
+import orderby from 'lodash.orderby';
 import FeedItem from '@components/Feed-Item/index.vue';
 import GenericButton from '@components/Generic-Components/Generic-Button/index.vue';
 import GenericInputBox from '@components/Generic-Components/Generic-Input-Box/index.vue';

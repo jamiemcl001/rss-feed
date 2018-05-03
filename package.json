@@ -44,8 +44,9 @@
   "dependencies": {
     "axios": "^0.18.0",
     "date-and-time": "^0.6.2",
+    "lodash.orderby": "^4.6.0",
     "md5": "^2.2.1",
-    "orderby": "^1.1.0",
+    "string-format": "^1.0.0",
     "striptags": "^3.1.1",
     "vue": "^2.5.16",
     "vue-masonry": "^0.11.1",
