@@ -7,12 +7,11 @@ export default {
         };
     },
     methods: {
-        clearInput() {
+        resetInput() {
             Vue.set(this, 'internalModel', '');
         }
     },
     props: [
-        'onChange',
         'placeholderText'
     ],
     watch: {

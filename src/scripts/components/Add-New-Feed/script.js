@@ -14,8 +14,8 @@ export default {
     },
     methods: {
         clearInputs() {
-            this.$refs.feedNameInput.clearInput();
-            this.$refs.feedUrlInput.clearInput();
+            this.$refs.feedNameInput.resetInput();
+            this.$refs.feedUrlInput.resetInput();
         },
 
         onClick() {
