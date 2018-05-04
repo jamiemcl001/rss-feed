@@ -46,6 +46,7 @@
     "date-and-time": "^0.6.2",
     "lodash.orderby": "^4.6.0",
     "md5": "^2.2.1",
+    "offline-js": "^0.7.19",
     "string-format": "^1.0.0",
     "striptags": "^3.1.1",
     "vue": "^2.5.16",
