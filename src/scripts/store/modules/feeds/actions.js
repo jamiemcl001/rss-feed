@@ -1,4 +1,3 @@
-import axios from 'axios';
 import md5 from 'md5';
 import format from 'string-format';
 import GLOBAL_CONSTANTS from '@constants/global-constants';
@@ -11,17 +10,18 @@ export default {
             return console.error(''); // do something with the snackbar here
         }
 
-        axios.get(format(GLOBAL_CONSTANTS.RSS2JSON_API_URL, {
+        return fetch(format(GLOBAL_CONSTANTS.RSS2JSON_API_URL, {
                 feedUrl: escape(feedUrl),
                 apiKey: GLOBAL_CONSTANTS.RSS2JSON_API_KEY,
                 count: GLOBAL_CONSTANTS.RSS2JSON_DEFAULT_NUM_ITEMS
             }))
-            .then((response) => {
+            .then((response) => response.json())
+            .then((data) => {
                 return context.commit('add-feed', {
-                    id: md5(response.data.feed.url),
-                    feedContent: response.data.items,
+                    id: md5(data.feed.url),
+                    feedContent: data.items,
                     feedName,
-                    feedUrl: response.data.feed.url
+                    feedUrl: data.feed.url
                 });
             })
             .catch((e) => console.error(e)); // do something with the snackbar here
@@ -29,11 +29,13 @@ export default {
 
     'fetch-latest-items'(context) {
         context.state.forEach((item) => {
-            return axios.get(format(GLOBAL_CONSTANTS.RSS2JSON_API_URL, {
+            return fetch(format(GLOBAL_CONSTANTS.RSS2JSON_API_URL, {
                 feedUrl: escape(item.feedUrl),
                 apiKey: GLOBAL_CONSTANTS.RSS2JSON_API_KEY,
                 count: GLOBAL_CONSTANTS.RSS2JSON_DEFAULT_NUM_ITEMS
-            })).then(({data}) => {
+            }))
+            .then((response) => response.json())
+            .then(({data}) => {
                 context.commit('replace-feed-contents', {
                     feed: item.id,
                     content: data.items
