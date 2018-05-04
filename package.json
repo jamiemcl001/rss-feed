@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "date-and-time": "^0.6.2",
+    "date-fns": "^2.0.0-alpha.7",
     "lodash.orderby": "^4.6.0",
     "md5": "^2.2.1",
     "string-format": "^1.0.0",

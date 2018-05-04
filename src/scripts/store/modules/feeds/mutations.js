@@ -1,4 +1,4 @@
-import date from 'date-and-time';
+import parse from 'date-fns/parse';
 import Vue from 'vue';
 
 export default {
@@ -10,7 +10,7 @@ export default {
                 feedName: payload.feedName,
                 link: item.link,
                 pubDate: item.pubDate,
-                pubDateMilliseconds: date.parse(item.pubDate, 'YYYY-MM-DD HH:mm:ss').getTime(),
+                pubDateMilliseconds: parse(item.pubDate, 'YYYY-MM-DD HH:mm:ss', new Date()).getTime(),
                 thumbnail: item.thumbnail,
                 title: item.title
             })),
@@ -36,7 +36,7 @@ export default {
                 feedName: state[itemIndex].feedName,
                 link: item.link,
                 pubDate: item.pubDate,
-                pubDateMilliseconds: date.parse(item.pubDate, 'YYYY-MM-DD HH:mm:ss').getTime(),
+                pubDateMilliseconds: parse(item.pubDate, 'YYYY-MM-DD HH:mm:ss', new Date()).getTime(),
                 thumbnail: item.thumbnail,
                 title: item.title
             }))

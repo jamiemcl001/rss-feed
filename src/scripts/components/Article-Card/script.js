@@ -1,4 +1,5 @@
-import date from 'date-and-time';
+import format from 'date-fns/format';
+import parse from 'date-fns/parse';
 import striptags from 'striptags';
 import imagesLoaded from 'vue-images-loaded';
 
@@ -8,8 +9,8 @@ export default {
     },
     filters: {
         dateFormat(value) {
-            return date.format(
-                date.parse(value, 'YYYY-MM-DD HH:mm:ss'),
+            return format(
+                parse(value, 'YYYY-MM-DD HH:mm:ss', new Date()),
                 'MMM DD YYYY | HH:mm'
             );
         },
