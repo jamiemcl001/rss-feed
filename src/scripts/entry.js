@@ -7,6 +7,8 @@ import store from './store';
 Vue.use(VueMasonryPlugin);
 Vue.use(VueTruncate);
 
+store.dispatch('feeds/fetch-latest-items');
+
 new Vue({
     el: '#app',
     render: (h) => h(App),

@@ -11,7 +11,11 @@ export default {
             return console.error(''); // do something with the snackbar here
         }
 
-        axios.get(format(GLOBAL_CONSTANTS.RSS2JSON_API_URL, escape(feedUrl)))
+        axios.get(format(GLOBAL_CONSTANTS.RSS2JSON_API_URL, {
+                feedUrl: escape(feedUrl),
+                apiKey: GLOBAL_CONSTANTS.RSS2JSON_API_KEY,
+                count: GLOBAL_CONSTANTS.RSS2JSON_DEFAULT_NUM_ITEMS
+            }))
             .then((response) => {
                 return context.commit('add-feed', {
                     id: md5(response.data.feed.url),
@@ -21,5 +25,20 @@ export default {
                 });
             })
             .catch((e) => console.error(e)); // do something with the snackbar here
-    }
+    },
+
+    'fetch-latest-items'(context) {
+        context.state.forEach((item) => {
+            return axios.get(format(GLOBAL_CONSTANTS.RSS2JSON_API_URL, {
+                feedUrl: escape(item.feedUrl),
+                apiKey: GLOBAL_CONSTANTS.RSS2JSON_API_KEY,
+                count: GLOBAL_CONSTANTS.RSS2JSON_DEFAULT_NUM_ITEMS
+            })).then(({data}) => {
+                context.commit('replace-feed-contents', {
+                    feed: item.id,
+                    content: data.items
+                });
+            });
+        });
+    },
 };

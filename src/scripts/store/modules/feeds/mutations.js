@@ -26,6 +26,23 @@ export default {
         window.localStorage.setItem('feeds', JSON.stringify(state));
     },
 
+    'replace-feed-contents'(state, payload) {
+        const itemIndex = state.findIndex((item) => item.id === payload.feed);
+
+        Vue.set(state, itemIndex, {
+            ...state[itemIndex],
+            feedContent: payload.content.map((item) => ({
+                description: item.description,
+                feedName: state[itemIndex].feedName,
+                link: item.link,
+                pubDate: item.pubDate,
+                pubDateMilliseconds: date.parse(item.pubDate, 'YYYY-MM-DD HH:mm:ss').getTime(),
+                thumbnail: item.thumbnail,
+                title: item.title
+            }))
+        });
+    },
+
     'toggle-focussed'(state, payload) {
         const itemIndex = state.findIndex((item) => item.id === payload);
 
