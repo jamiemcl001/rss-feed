@@ -13,13 +13,18 @@ export default {
         };
     },
     methods: {
+        clearInputs() {
+            this.$refs.feedNameInput.clearInput();
+            this.$refs.feedUrlInput.clearInput();
+        },
+
         onClick() {
             if (!this.validate()) return;
 
             this.$store.dispatch('feeds/add-feed', {
                 feedName: this.feedName || 'BBC Tech',
-                feedUrl: this.feedUrl || 'http://feeds.bbci.co.uk/news/technology/rss.xml?edition=uk'
-            });
+                feedUrl: this.feedUrl
+            }).then(() => this.clearInputs());
         },
 
         updateFeedName(newVal) {

@@ -4,10 +4,12 @@
     
     <Generic-Input-Box class="add-new-feed__input--dark" 
                        placeholderText="Type your feed name..." 
+                       ref="feedNameInput"
                        @valueChanged="updateFeedName">
     </Generic-Input-Box>
     <Generic-Input-Box class="add-new-feed__input--dark" 
                        placeholderText="Copy your RSS url..." 
+                       ref="feedUrlInput"
                        @valueChanged="updateFeedUrl">
     </Generic-Input-Box>
 
