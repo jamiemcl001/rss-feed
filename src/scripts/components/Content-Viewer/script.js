@@ -16,9 +16,13 @@ export default {
                 .reverse();
         },
         visibleArticles() {
-            return this.$store.state.feeds
-                .filter((feed) => feed.isActive)
+            return this.$store.getters['feeds/visibleFeeds']
                 .reduce((acc, val) => [...acc, ...val.feedContent], []);
+        }
+    },
+    methods: {
+        forceRedraw() {
+            this.$redrawVueMasonry();
         }
     }
 };

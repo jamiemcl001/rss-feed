@@ -1,11 +1,12 @@
 @import '~scss/global-vars';
 @import '~scss/mixins/size';
 
-$hover-delete-btn-color: #fcf0f0;
+$delete-btn-color: #fcf0f0;
 
 .feed-item {
   margin-bottom: 7px;
   transition: opacity 500ms;
+  user-select: none;
 
   &--is-inactive {
     opacity: .4;
@@ -15,13 +16,22 @@ $hover-delete-btn-color: #fcf0f0;
     display: none;
   }
 
+  &__checkbox:checked + &__label::before {
+    content: '\f058';
+    margin-left: -1px;
+    margin-top: -2px;
+  }
+
   &__label {
     @include size(21px);
     border: 3px solid $color-white;
     border-radius: 21px;
     box-sizing: border-box;
+    color: $color-white;
     cursor: pointer;
     display: inline-block;
+    font-family: Font Awesome\ 5 Free;
+    font-weight: 900;
     margin-right: 15px;
     vertical-align: middle;
   }
@@ -37,7 +47,7 @@ $hover-delete-btn-color: #fcf0f0;
   &__delete-btn {
     @include size(21px);
     background-repeat: no-repeat;
-    color: $color-white;
+    color: $delete-btn-color;
     display: inline-block;
     font-size: 21px;
     margin-left: 15px;
@@ -46,10 +56,6 @@ $hover-delete-btn-color: #fcf0f0;
 
     &:active {
       transform: scale(.85);
-    }
-
-    &:hover {
-      color: $hover-delete-btn-color;
     }
   }
 }

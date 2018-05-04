@@ -1,6 +1,6 @@
-<div class="feed-item" :class="{'feed-item--is-inactive': !item.isActive}">
+<div class="feed-item">
   <input type="checkbox" :id="'checkbox-' + item.id" class="feed-item__checkbox">
-  <label :for="'checkbox-' + item.id" class="feed-item__label" v-on:click="toggleFilterFocus()"></label>
+  <label :for="'checkbox-' + item.id" class="feed-item__label" @click="toggleFilter()"></label>
   <span class="feed-item__feed-name">{{item.feedName}}</span>
   
   <div class="feed-item__delete-btn" v-on:click="deleteFeed()">

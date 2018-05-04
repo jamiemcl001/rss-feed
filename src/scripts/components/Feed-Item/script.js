@@ -4,7 +4,7 @@ export default {
             this.$store.commit('feeds/delete-feed', this.item.id);
         },
         toggleFilter() {
-            this.$store.commit('feeds/toggle-filtered', this.item.id);
+            this.$store.commit('feeds/toggle-focussed', this.item.id);
         }
     },
     props: [

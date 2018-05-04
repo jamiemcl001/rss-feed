@@ -7,7 +7,7 @@
     <div class="content-viewer__column-sizer"></div>
     <div class="content-viewer__gutter-selector"></div>
     <div v-masonry-tile class="content-viewer__item" v-for="(article, index) in orderedArticles">
-      <Article-Card :article="article"></Article-Card>
+      <Article-Card :article="article" @force-layout-redraw="forceRedraw"></Article-Card>
     </div>
   </div>
 </section>

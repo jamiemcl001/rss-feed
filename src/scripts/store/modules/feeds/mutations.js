@@ -1,4 +1,5 @@
 import date from 'date-and-time';
+import Vue from 'vue';
 
 export default {
     'add-feed'(state, payload) {
@@ -13,7 +14,7 @@ export default {
                 thumbnail: item.thumbnail,
                 title: item.title
             })),
-            isActive: true
+            isFocussed: false
         });
 
         window.localStorage.setItem('feeds', JSON.stringify(state));
@@ -25,21 +26,12 @@ export default {
         window.localStorage.setItem('feeds', JSON.stringify(state));
     },
 
-    'toggle-filtered'(state, payload) {
-        const item = state.find((item) => {
-            return item.id === payload;
+    'toggle-focussed'(state, payload) {
+        const itemIndex = state.findIndex((item) => item.id === payload);
+
+        Vue.set(state, itemIndex, {
+            ...state[itemIndex],
+            isFocussed: !state[itemIndex].isFocussed
         });
-
-        if (item.isActive) {
-            state.map((item) => ({
-                ...item,
-                isActive: true
-            }));
-        }
-
-        state.map((item) => ({
-            ...item,
-            isActive: item.id === payload
-        }));
     }
 };

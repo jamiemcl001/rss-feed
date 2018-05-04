@@ -1,4 +1,4 @@
-<div class="article-card">
+<div class="article-card" v-images-loaded:on.done="imageDownloaded">
   <div class="article-card__header-row">
     <i class="article-card__external-icon fas fa-external-link-alt" @click="launchArticleInNewWindow()"></i>
     <span class="article-card__link" @click="launchArticleInNewWindow()">{{article.feedName}}</span>
