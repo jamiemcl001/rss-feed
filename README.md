@@ -2,7 +2,7 @@
 
 A new RSS Reader that is both elegant and functional:
 
-![RSS Reader](https://imgur.com/a/2rMqaTv)
+![RSS Reader](https://image.ibb.co/jLeHg7/Screen_Shot_2018_05_05_at_16_33_23.png)
 
 # Table of Contents
 * [Current Features](#current-features)
