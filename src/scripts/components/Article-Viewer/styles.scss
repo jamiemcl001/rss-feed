@@ -1,0 +1,29 @@
+@import '~scss/mixins/prefixed/placeholder';
+@import '~scss/global-vars';
+
+.article-viewer {
+  background-color: $content-background;
+  flex: 1;
+  overflow-y: scroll;
+  padding: 20px 0;
+
+  &__grid {
+    margin: 0 auto;
+  }
+
+  &__column-sizer {
+    display: none;
+    width: 25%;
+  }
+
+  &__gutter-selector {
+    display: none;
+    width: 20px;
+  }
+
+  &__item {
+    margin-bottom: 10px;
+    transform: translateZ(0);
+    width: 25%;
+  }
+}

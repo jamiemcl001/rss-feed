@@ -1,0 +1,20 @@
+@media screen and (max-width: 1600px) {
+  .article-viewer__column-sizer,
+  .article-viewer__item {
+    width: 33%;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .article-viewer__column-sizer,
+  .article-viewer__item {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .article-viewer__column-sizer,
+  .article-viewer__item {
+    width: 100%;
+  }
+}

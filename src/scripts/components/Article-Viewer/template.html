@@ -1,0 +1,13 @@
+<section class="article-viewer">
+  <div class="article-viewer__grid" v-masonry transition-duration="0.5s"
+                                              item-selector=".article-viewer__item"
+                                              column-width=".article-viewer__column-sizer"
+                                              horizontal-order="true"
+                                              gutter=".article-viewer__gutter-selector">
+    <div class="article-viewer__column-sizer"></div>
+    <div class="article-viewer__gutter-selector"></div>
+    <div v-masonry-tile class="article-viewer__item" v-for="(article, index) in orderedArticles">
+      <Article-Card :article="article" @force-layout-redraw="forceRedraw"></Article-Card>
+    </div>
+  </div>
+</section>
