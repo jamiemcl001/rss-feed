@@ -1,0 +1,4 @@
+<div class="snackbar" :class="[{'snackbar--is-visible': snackbar.visible}, snackbarType]">
+  <span class="snackbar__message-content">{{ snackbar.message || '&nbsp;' }}</span>
+  <span class="snackbar__dismiss-text" v-if="snackbar.dismissable" v-on:click="dismiss()">CLOSE</span>
+</div>

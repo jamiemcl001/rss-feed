@@ -11,6 +11,7 @@
         "paths": {
             "@components/*": ["./src/scripts/components/*"],
             "@constants/*": ["./src/scripts/constants/*"],
+            "@helpers/*": ["./src/scripts/helpers/*"],
             "@store/*": ["./src/scripts/store/*"]
         },
         "allowSyntheticDefaultImports": true

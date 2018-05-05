@@ -17,6 +17,7 @@ module.exports = [
             alias: {
                 '@components': resolve(__dirname, 'src/scripts/components'),
                 '@constants': resolve(__dirname, 'src/scripts/constants'),
+                '@helpers': resolve(__dirname, 'src/scripts/helpers'),
                 '@store': resolve(__dirname, 'src/scripts/store'),
                 'scss': resolve(__dirname, 'src/assets/scss')
             }

@@ -1,0 +1,49 @@
+@import '~scss/global-vars';
+
+$info-background-color: #3ab040;
+$info-font-color: #000000;
+$error-background-color: #99451c;
+$error-font-color: #ffffff;
+
+.snackbar {
+  background-color: $color-black;
+  border-radius: 2px 2px 0 0;
+  bottom: -4%;
+  color: $color-white;
+  font-size: 1.15rem;
+  left: 50%;
+  min-width: 100px;
+  padding: 10px;
+  position: fixed;
+  transform: translateX(-50%);
+  transition: background-color .5s, bottom .5s;
+  vertical-align: middle;
+
+  &__message-content {
+    float: left;
+  }
+
+  &__dismiss-text {
+    cursor: pointer;
+    float: right;
+    font-size: 1rem;
+    font-weight: 300;
+    margin-left: 20px;
+    text-transform: uppercase;
+    vertical-align: middle;
+  }
+
+  &--is-visible {
+    bottom: 0%;
+  }
+
+  &--is-error {
+    background-color: $error-background-color;
+    color: $error-font-color;
+  }
+
+  &--is-info {
+    background-color: $info-background-color;
+    color: $info-font-color;
+  }
+}
