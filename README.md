@@ -4,6 +4,8 @@ A new RSS Reader that is both elegant and functional:
 
 ![RSS Reader](https://image.ibb.co/jLeHg7/Screen_Shot_2018_05_05_at_16_33_23.png)
 
+<span style="font-size: 1.5rem; color: #56616c; display: block; text-align: center;">[DEMO](https://jamiemcl001.github.io/rss-feed/dist/)</span>
+
 # Table of Contents
 * [Current Features](#current-features)
 * [Roadmap](#roadmap)
