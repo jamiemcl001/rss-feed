@@ -1,6 +1,7 @@
 import orderby from 'lodash.orderby';
 import Vue from 'vue';
 import ArticleCard from '@components/Article-Card/index.vue';
+import debounce from '@utilities/debounce';
 
 export default {
     components: {
@@ -21,6 +22,16 @@ export default {
         }
     },
     methods: {
+        debouncedScrollHandler: debounce(function() {
+            this.$store.dispatch('feeds/fetch-older-items');
+        }, 1000),
+
+        scrollHandler({target}) {
+            if ((target.scrollTop + target.clientHeight) === target.scrollHeight) {
+                this.debouncedScrollHandler();
+            }
+        },
+
         forceRedraw() {
             this.$redrawVueMasonry();
         }

@@ -12,7 +12,8 @@
             "@components/*": ["./src/scripts/components/*"],
             "@constants/*": ["./src/scripts/constants/*"],
             "@helpers/*": ["./src/scripts/helpers/*"],
-            "@store/*": ["./src/scripts/store/*"]
+            "@store/*": ["./src/scripts/store/*"],
+            "@utilities/*": ["./src/scripts/utilities/*"]
         },
         "allowSyntheticDefaultImports": true
     }

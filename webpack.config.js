@@ -19,6 +19,7 @@ module.exports = [
                 '@constants': resolve(__dirname, 'src/scripts/constants'),
                 '@helpers': resolve(__dirname, 'src/scripts/helpers'),
                 '@store': resolve(__dirname, 'src/scripts/store'),
+                '@utilities': resolve(__dirname, 'src/scripts/utilities'),
                 'scss': resolve(__dirname, 'src/assets/scss')
             }
         },

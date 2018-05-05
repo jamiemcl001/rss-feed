@@ -1,8 +1,9 @@
 extends: google
 rules:
-  no-console: [0]
   comma-dangle: [0]
   max-len: [0]
+  no-console: [0]
+  no-invalid-this: [0]
   require-jsdoc: [0]
 env:
   browser: true

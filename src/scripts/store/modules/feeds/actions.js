@@ -4,6 +4,14 @@ import GLOBAL_CONSTANTS from '@constants/global-constants';
 import {SNACKBAR_TYPES} from '@components/Snackbar/snackbar-types';
 import showSnackbar from '@helpers/show-snackbar';
 
+function generateApiRequestUrl(url, apiKey, count) {
+    return format(GLOBAL_CONSTANTS.RSS2JSON_API_URL, {
+        feedUrl: escape(url),
+        apiKey: apiKey,
+        count: count
+    });
+}
+
 export default {
     'add-feed'(context, {feedName, feedUrl}, rootContext) {
         if (context.state.some((item) => item.feedName === feedName)) {
@@ -12,11 +20,8 @@ export default {
             return showSnackbar(`Duplicate feed URL detected - please use another`, SNACKBAR_TYPES.INFO, true);
         }
 
-        return fetch(format(GLOBAL_CONSTANTS.RSS2JSON_API_URL, {
-                feedUrl: escape(feedUrl),
-                apiKey: GLOBAL_CONSTANTS.RSS2JSON_API_KEY,
-                count: GLOBAL_CONSTANTS.RSS2JSON_DEFAULT_NUM_ITEMS
-            }))
+        return fetch(generateApiRequestUrl(feedUrl, GLOBAL_CONSTANTS.RSS2JSON_API_KEY,
+                GLOBAL_CONSTANTS.RSS2JSON_DEFAULT_NUM_ITEMS))
             .then((response) => response.json())
             .then((data) => {
                 showSnackbar(`Feed ${feedName} was successfully added`, SNACKBAR_TYPES.INFO, true);
@@ -33,11 +38,8 @@ export default {
 
     'fetch-latest-items'(context) {
         context.state.forEach((item) => {
-            return fetch(format(GLOBAL_CONSTANTS.RSS2JSON_API_URL, {
-                feedUrl: escape(item.feedUrl),
-                apiKey: GLOBAL_CONSTANTS.RSS2JSON_API_KEY,
-                count: GLOBAL_CONSTANTS.RSS2JSON_DEFAULT_NUM_ITEMS
-            }))
+            return fetch(generateApiRequestUrl(item.feedUrl, GLOBAL_CONSTANTS.RSS2JSON_API_KEY,
+                GLOBAL_CONSTANTS.RSS2JSON_DEFAULT_NUM_ITEMS))
             .then((response) => response.json())
             .then((data) => {
                 context.commit('replace-feed-contents', {
@@ -47,4 +49,18 @@ export default {
             });
         });
     },
+
+    'fetch-older-items'(context) {
+        context.state.forEach((item) => {
+            return fetch(generateApiRequestUrl(item.feedUrl, GLOBAL_CONSTANTS.RSS2JSON_API_KEY,
+                item.feedContent.length + GLOBAL_CONSTANTS.RSS2JSON_DEFAULT_NUM_ITEMS))
+            .then((response) => response.json())
+            .then((data) => {
+                context.commit('append-feed-contents', {
+                    feed: item.id,
+                    content: data.items
+                });
+            });
+        });
+    }
 };
